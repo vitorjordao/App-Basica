@@ -16,21 +16,35 @@ class ListManipulationForm extends StatelessWidget {
   @override
   Widget build(context) {
     final FormItens formItens = FormItens();
-    return Container(
-              child: Column(
-                children: <Widget>[
-                  formItens.buttonField("Voltar", (){
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => 
-                                          login
-                                        ),
-                    );
-                  }),
-                ],
-                mainAxisAlignment: MainAxisAlignment.center,
-              ),
-              padding: EdgeInsets.all(30.0),
-            );
+    return 
+                  
+                  ListView(
+                    children: <Widget>[
+                      ListTile(
+                        leading: Icon(Icons.map),
+                        title: Text('Map'),
+                      ),
+                      ListTile(
+                        leading: Icon(Icons.photo_album),
+                        title: Text('Album'),
+                      ),
+                      ListTile(
+                        leading: Icon(Icons.phone),
+                        title: Text('Phone'),
+                      ),
+                      ListTile(
+                        leading: Icon(Icons.backspace),
+                        title: Text("Voltar"),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => 
+                                                login
+                                              ),
+                          );
+                        },
+                      )
+                    ],
+                  );
   }
 }
